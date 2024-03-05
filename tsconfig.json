@@ -14,7 +14,7 @@
     },
     "sourceMap": true,
     "declaration": true,
-    "declarationDir": "./dist/types",
+    "declarationDir": "./dist",
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test.ts"]

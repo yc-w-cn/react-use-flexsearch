@@ -1,6 +1,6 @@
 {
   "name": "@yc-w-cn/react-use-flexsearch",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "React hook to search a FlexSearch index",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -12,6 +12,7 @@
     "prebuild": "rimraf dist",
     "prepublish": "pnpm run build",
     "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
     "test": "jest",
     "test:watch": "pnpm run test -- --watch",
     "lint": "eslint src"

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/yc-w-cn/react-use-flexsearch/compare/v0.3.2...v0.3.3) (2024-03-05)
+
+
+### Bug Fixes
+
+* change export ([c55fe0e](https://github.com/yc-w-cn/react-use-flexsearch/commit/c55fe0e80fdd9bcf9d5b80fb1582f081e8908092))
+
 ### [0.3.2](https://github.com/yc-w-cn/react-use-flexsearch/compare/v0.3.1...v0.3.2) (2024-03-05)
 
 

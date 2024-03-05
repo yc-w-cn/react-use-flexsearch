@@ -5,12 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@types/flexsearch':
-    specifier: ^0.7.6
-    version: 0.7.6
-  flexsearch:
-    specifier: ^0.7.43
-    version: 0.7.43
+  flexsearch-ts:
+    specifier: ^0.7.35
+    version: 0.7.35
 
 devDependencies:
   '@babel/core':
@@ -2072,10 +2069,6 @@ packages:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
     dev: true
 
-  /@types/flexsearch@0.7.6:
-    resolution: {integrity: sha512-H5IXcRn96/gaDmo+rDl2aJuIJsob8dgOXDqf8K0t8rWZd1AFNaaspmRsElESiU+EWE33qfbFPgI0OC/B1g9FCA==}
-    dev: false
-
   /@types/graceful-fs@4.1.9:
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
     dependencies:
@@ -3991,8 +3984,8 @@ packages:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
     dev: true
 
-  /flexsearch@0.7.43:
-    resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
+  /flexsearch-ts@0.7.35:
+    resolution: {integrity: sha512-u+9rKRd9lsoUXyesQcDJ/aFdfFAWInigK95DUnmifbeOLU5LvjGiwqq+Xr55rCUbJCOSG8KTY+BoWWqFx5gbwA==}
     dev: false
 
   /for-each@0.3.3:

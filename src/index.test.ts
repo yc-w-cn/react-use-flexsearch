@@ -1,5 +1,5 @@
 import { testHook, cleanup } from 'react-testing-library'
-import { Index } from 'flexsearch'
+import { Index } from 'flexsearch-ts'
 import { useFlexSearch } from './index'
 
 const documents = [

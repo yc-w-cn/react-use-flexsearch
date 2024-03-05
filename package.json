@@ -12,7 +12,6 @@
     "prebuild": "rimraf dist",
     "prepublish": "pnpm run build",
     "release": "standard-version",
-    "release:minor": "standard-version --release-as minor",
     "test": "jest",
     "test:watch": "pnpm run test -- --watch",
     "lint": "eslint src"

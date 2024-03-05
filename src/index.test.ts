@@ -1,6 +1,5 @@
-import React from 'react'
 import { testHook, cleanup } from 'react-testing-library'
-import FlexSearch from 'flexsearch'
+import { Index } from 'flexsearch'
 import { useFlexSearch } from './index'
 
 const documents = [
@@ -17,18 +16,15 @@ const documents = [
   {
     id: 2,
     name: 'Lodash',
-    text:
-      'A modern JavaScript utility library delivering modularity, performance & extras.',
+    text: 'A modern JavaScript utility library delivering modularity, performance & extras.',
   },
 ]
 
-const index = FlexSearch.create()
+const index = new Index()
 
-documents.forEach(doc => {
+documents.forEach((doc) => {
   index.add(doc.id, JSON.stringify(doc))
 })
-
-const exportedIndex = index.export()
 
 const store = {
   [documents[0].id]: documents[0],
@@ -43,8 +39,8 @@ beforeEach(() => {
 
 afterEach(cleanup)
 afterEach(() => {
-  console.error.mockClear()
-  console.warn.mockClear()
+  ;(console.error as jest.Mock).mockClear()
+  ;(console.warn as jest.Mock).mockClear()
 })
 
 describe('useFlexSearch', () => {
@@ -52,27 +48,14 @@ describe('useFlexSearch', () => {
     let objResults
     testHook(() => (objResults = useFlexSearch(null, index, store)))
 
-    let exportedResults
-    testHook(
-      () => (exportedResults = useFlexSearch(null, exportedIndex, store)),
-    )
-
     expect(objResults).toEqual([])
-    expect(exportedResults).toEqual([])
   })
 
   test('returns empty results if query has no matches', () => {
     let objResults
     testHook(() => (objResults = useFlexSearch('nomatches', index, store)))
 
-    let exportedResults
-    testHook(
-      () =>
-        (exportedResults = useFlexSearch('nomatches', exportedIndex, store)),
-    )
-
     expect(objResults).toEqual([])
-    expect(exportedResults).toEqual([])
   })
 
   test('returns results if query has matches', () => {
@@ -81,18 +64,7 @@ describe('useFlexSearch', () => {
       () => (objResults = useFlexSearch(documents[0].name, index, store)),
     )
 
-    let exportedResults
-    testHook(
-      () =>
-        (exportedResults = useFlexSearch(
-          documents[0].name,
-          exportedIndex,
-          store,
-        )),
-    )
-
     expect(objResults).toEqual([documents[0]])
-    expect(exportedResults).toEqual([documents[0]])
   })
 
   test('warns if index and store are missing', () => {
@@ -101,8 +73,7 @@ describe('useFlexSearch', () => {
 
     testHook(() => useFlexSearch(documents[0].name, null, null))
     expect(console.warn).toHaveBeenLastCalledWith(message)
-
-    console.warn.mockClear()
+    ;(console.warn as jest.Mock).mockClear()
     testHook(() => useFlexSearch(documents[0].name, undefined, undefined))
     expect(console.warn).toHaveBeenLastCalledWith(message)
   })
@@ -113,8 +84,7 @@ describe('useFlexSearch', () => {
 
     testHook(() => useFlexSearch(documents[0].name, null, store))
     expect(console.warn).toHaveBeenLastCalledWith(message)
-
-    console.warn.mockClear()
+    ;(console.warn as jest.Mock).mockClear()
     testHook(() => useFlexSearch(documents[0].name, undefined, store))
     expect(console.warn).toHaveBeenLastCalledWith(message)
   })
@@ -125,8 +95,7 @@ describe('useFlexSearch', () => {
 
     testHook(() => useFlexSearch(documents[0].name, index, null))
     expect(console.warn).toHaveBeenLastCalledWith(message)
-
-    console.warn.mockClear()
+    ;(console.warn as jest.Mock).mockClear()
     testHook(() => useFlexSearch(documents[0].name, index, undefined))
     expect(console.warn).toHaveBeenLastCalledWith(message)
   })

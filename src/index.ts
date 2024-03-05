@@ -1,8 +1,13 @@
 import { useState, useEffect, useMemo } from 'react'
-import FlexSearch from 'flexsearch'
+import { Index, SearchOptions } from 'flexsearch'
 
-export const useFlexSearch = (query, providedIndex, store, searchOptions) => {
-  const [index, setIndex] = useState(null)
+export const useFlexSearch = <T = any>(
+  query?: string | null,
+  providedIndex?: Index | null,
+  store?: Record<string, T> | null,
+  searchOptions?: SearchOptions | null,
+) => {
+  const [index, setIndex] = useState<Index | null>(null)
 
   useEffect(() => {
     if (!providedIndex && !store)
@@ -25,22 +30,17 @@ export const useFlexSearch = (query, providedIndex, store, searchOptions) => {
       return
     }
 
-    if (providedIndex instanceof FlexSearch) {
+    if (providedIndex instanceof Index) {
       setIndex(providedIndex)
       return
     }
-
-    const importedIndex = FlexSearch.create()
-    importedIndex.import(providedIndex)
-
-    setIndex(importedIndex)
   }, [providedIndex])
 
   return useMemo(() => {
     if (!query || !index || !store) return []
 
-    const rawResults = index.search(query, searchOptions)
+    const rawResults = index.search(query, searchOptions || {})
 
-    return rawResults.map(id => store[id])
+    return rawResults.map((id) => store[id])
   }, [query, index, store])
 }

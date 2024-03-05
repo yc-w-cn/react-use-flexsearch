@@ -24,12 +24,12 @@ searching.
 
 ### Parameters
 
-| Name          | Type              | Description                                                                                                           |
-| ------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **`query`**   | `String`          | The search query. As this value updates, the return value will be updated.                                            |
-| **`index`**   | `Index \| String` | The FlexSearch index. This can be an instance of a FlexSearch index or one that has been exported via `Index.export`. |
-| **`store`**   | `Object`          | Object mapping a result `id` to an object of data.                                                                    |
-| **`options`** | `Object`          | Search options passed to `Index.search`.                                                                              |
+| Name          | Type     | Description                                                                |
+| ------------- | -------- | -------------------------------------------------------------------------- |
+| **`query`**   | `String` | The search query. As this value updates, the return value will be updated. |
+| **`index`**   | `Index`  | The FlexSearch index. This can be an instance of a FlexSearch index.       |
+| **`store`**   | `Object` | Object mapping a result `id` to an object of data.                         |
+| **`options`** | `Object` | Search options passed to `Index.search`.                                   |
 
 ### Example
 

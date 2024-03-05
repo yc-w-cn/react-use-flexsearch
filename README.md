@@ -4,12 +4,12 @@ React hook to search a [FlexSearch][flexsearch] index.
 
 ## Status
 
-[![npm version](https://badge.fury.io/js/react-use-flexsearch.svg)](http://badge.fury.io/js/react-use-flexsearch)
+[![npm version](https://badge.fury.io/js/@yc-w-cn%2Freact-use-flexsearch.svg)](https://badge.fury.io/js/@yc-w-cn%2Freact-use-flexsearch.svg)
 
 ## Installation
 
 ```sh
-npm install --save react-use-flexsearch
+npm install --save @yc-w-cn/react-use-flexsearch
 ```
 
 ## API

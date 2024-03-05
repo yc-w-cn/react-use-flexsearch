@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/yc-w-cn/react-use-flexsearch/compare/v0.3.3...v0.3.4) (2024-03-05)
+
+
+### Features
+
+* migrate flexsearch to flexsearch-ts fork ([d862f87](https://github.com/yc-w-cn/react-use-flexsearch/commit/d862f8750b943434fe1d7c65791228c15a707231))
+
+
+### Bug Fixes
+
+* change extention to cjs ([4dee862](https://github.com/yc-w-cn/react-use-flexsearch/commit/4dee862835883498e48f9195a4b6c803d0786237))
+
 ### [0.3.3](https://github.com/yc-w-cn/react-use-flexsearch/compare/v0.3.2...v0.3.3) (2024-03-05)
 
 
